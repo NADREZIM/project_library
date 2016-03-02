@@ -1,0 +1,9 @@
+during  project writing  I used:
+- OOP;
+- Java Core;
+- DAO/DTO PATTERN;
+- Servlet API(Cookie,Filter,Listener,Session, JSP, JSTL);
+- JDBC API: (Connection, Statement, PreparedStatement, ResultSet, ConnectionPool etc.);
+- XML, HTML;
+- DB: MySQL;
+- Tools: Maven, Tomcat, Intellij Idea, GIT ;

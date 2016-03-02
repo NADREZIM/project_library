@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+
+    <welcome-file-list>
+        <welcome-file>logIn.jsp</welcome-file>
+    </welcome-file-list>
+
+    <listener>
+        <listener-class>liba.servlets.listeners.ContextListener</listener-class>
+    </listener>
+
+   <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>liba.servlets.filters.filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/adminMainPage.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/userAmount</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/reportsAmount</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/bookAmount</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/deleteUsers</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/updateBooks</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/findUser</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/deleteBooks</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/addBook</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/showBooksAmount.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/showReportsAmount.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/showUsersAmount.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/showUserWithBook.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/adminPages/addBookForm.jsp</url-pattern>
+    </filter-mapping>
+
+
+
+    <servlet>
+        <servlet-name>logOut</servlet-name>
+        <servlet-class>liba.servlets.userServlets.UserLogOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logOut</servlet-name>
+        <url-pattern>/logOut</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addBook</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.AddBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addBook</servlet-name>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>returnBook</servlet-name>
+        <servlet-class>liba.servlets.userServlets.ReturnBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>returnBook</servlet-name>
+        <url-pattern>/returnBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginPasswordReminder</servlet-name>
+        <servlet-class>liba.servlets.userServlets.LoginPasswordReminder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginPasswordReminder</servlet-name>
+        <url-pattern>/remind</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteUsers</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.DeleteUsersFromDB</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteUsers</servlet-name>
+        <url-pattern>/deleteUsers</url-pattern>
+    </servlet-mapping>
+
+        <servlet>
+        <servlet-name>reportsAmount</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.ReportAmountServlet</servlet-class>
+    </servlet>
+        <servlet-mapping>
+            <servlet-name>reportsAmount</servlet-name>
+            <url-pattern>/reportsAmount</url-pattern>
+        </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateBooks</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.UpdateBooksInDB</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateBooks</servlet-name>
+        <url-pattern>/updateBooks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteBook</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.DeleteBookFromDB</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteBook</servlet-name>
+        <url-pattern>/deleteBooks</url-pattern>
+    </servlet-mapping>
+
+        <servlet>
+            <servlet-name>findUser</servlet-name>
+            <servlet-class>liba.servlets.adminServlets.FindUserWithBook</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>findUser</servlet-name>
+            <url-pattern>/findUser</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+           <servlet-name>check</servlet-name>
+            <servlet-class>liba.servlets.userServlets.Checking</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>check</servlet-name>
+            <url-pattern>/checking</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>userAmount</servlet-name>
+            <servlet-class>liba.servlets.adminServlets.UserAmountServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>userAmount</servlet-name>
+            <url-pattern>/userAmount</url-pattern>
+        </servlet-mapping>
+
+    <servlet>
+        <servlet-name>bookAmount</servlet-name>
+        <servlet-class>liba.servlets.adminServlets.BookAmountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bookAmount</servlet-name>
+        <url-pattern>/bookAmount</url-pattern>
+    </servlet-mapping>
+
+        <servlet>
+            <servlet-name>bookCatalog</servlet-name>
+            <servlet-class>liba.servlets.userServlets.BookCatalogServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>bookCatalog</servlet-name>
+            <url-pattern>/bookCatalog</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>connect</servlet-name>
+            <servlet-class>liba.servlets.userServlets.ConnectUserWithBook</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>connect</servlet-name>
+            <url-pattern>/connecting</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>libAdd</servlet-name>
+            <servlet-class>liba.servlets.userServlets.GetUserDataProcessing</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>libAdd</servlet-name>
+            <url-pattern>/getUserData</url-pattern>
+        </servlet-mapping>
+
+        <description>MySQL Test App</description>
+        <resource-ref>
+            <description>DB Connection</description>
+            <res-ref-name>jdbc/magazine</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+
+</web-app>
